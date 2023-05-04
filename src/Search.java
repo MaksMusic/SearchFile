@@ -15,14 +15,14 @@ public class Search {
     static List<String> text ;
 
     public static void main(String[] args) {
-        Path path = Paths.get("d:\\Users\\Admin\\Desktop\\JavaСправочник");
+        Path path = Paths.get("d:\\Users\\Admin\\Desktop\\JavaРЎРїСЂР°РІРѕС‡РЅРёРє");
         listFiles(path.toFile());
-        //keywordSearch(list,"linzy","линзы","цветные линзы","подарок","подарки");
+        //keywordSearch(list,"linzy","Р»РёРЅР·С‹","С†РІРµС‚РЅС‹Рµ Р»РёРЅР·С‹","РїРѕРґР°СЂРѕРє","РїРѕРґР°СЂРєРё");
         searchTextFile(list);
 
     }
 
-    /** Собрать все файлы из всех категрий в лист*/
+    /** РЎРѕР±СЂР°С‚СЊ РІСЃРµ С„Р°Р№Р»С‹ РёР· РІСЃРµС… РєР°С‚РµРіСЂРёР№ РІ Р»РёСЃС‚*/
     public static void listFiles(File dir) {
 
         File[] files = dir.listFiles();
@@ -37,10 +37,10 @@ public class Search {
     }
 
 
-    /** поиск по содержимому файлов из листа файлов */
+    /** РїРѕРёСЃРє РїРѕ СЃРѕРґРµСЂР¶РёРјРѕРјСѓ С„Р°Р№Р»РѕРІ РёР· Р»РёСЃС‚Р° С„Р°Р№Р»РѕРІ */
     public static void searchTextFile(List<File> list){
-        System.out.println("----------------ПОИСК ПО ФАЙЛУ---------------------");
-        System.out.println("введите ключевые слова для поиска");
+        System.out.println("----------------РџРћРРЎРљ РџРћ Р¤РђР™Р›РЈ---------------------");
+        System.out.println("РІРІРµРґРёС‚Рµ РєР»СЋС‡РµРІС‹Рµ СЃР»РѕРІР° РґР»СЏ РїРѕРёСЃРєР°");
         String words = new Scanner(System.in).nextLine();
         for (File file : list) {
             List<String> texts = new ArrayList<>();
@@ -59,7 +59,7 @@ public class Search {
 
                     if(str.toLowerCase().contains(words.toLowerCase())){
                         System.out.println(file.getName());
-                        System.out.println("---Информация---");
+                        System.out.println("---РРЅС„РѕСЂРјР°С†РёСЏ---");
                         System.out.println(texts);
                         System.out.println("----------");
                     }
@@ -70,7 +70,7 @@ public class Search {
         }
 
     }
-    /** поиск по названию файлов из листа файлов*/
+    /** РїРѕРёСЃРє РїРѕ РЅР°Р·РІР°РЅРёСЋ С„Р°Р№Р»РѕРІ РёР· Р»РёСЃС‚Р° С„Р°Р№Р»РѕРІ*/
     public static void keywordSearch(List<File> fileList,String ... strs){
         for (File file : fileList) {
             for (String str : strs) {
